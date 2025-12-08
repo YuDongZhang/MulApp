@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "MulApp"
 include(":app")
- 

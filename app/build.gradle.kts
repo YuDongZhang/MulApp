@@ -21,7 +21,14 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("debug") {
+            // 调试构建类型
+        }
+        create("profile") {
+            // 添加 profile 构建类型，用于 Flutter 性能分析
+            initWith(getByName("debug"))
+        }
+        getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
