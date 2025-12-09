@@ -35,12 +35,7 @@
             android:windowSoftInputMode="adjustResize">
         </activity>
         
-        <!-- React Native 界面 Activity -->
-        <activity
-            android:name=".RNMainActivity"
-            android:exported="false"
-            android:theme="@style/Theme.MulApp">
-        </activity>
+
     </application>
 
 </manifest>
