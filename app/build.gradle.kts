@@ -61,7 +61,10 @@ dependencies {
     // SoLoader for native lib loading
     implementation("com.facebook.soloader:soloader:0.11.0")
 
-
+//加号是为了自动下载最新0.72的
+    implementation("com.facebook.react:react-native:+")
+    3//hermes 解决lib so 缺失
+    implementation("com.facebook.react:hermes-android:0.71.8")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
