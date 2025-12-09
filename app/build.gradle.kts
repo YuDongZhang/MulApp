@@ -49,6 +49,14 @@ android {
 }
 
 dependencies {
+    // Flutter module
+    debugImplementation("com.example.flutter_module:flutter_debug:1.0")
+    "profileImplementation"("com.example.flutter_module:flutter_profile:1.0")
+    releaseImplementation("com.example.flutter_module:flutter_release:1.0")
+
+    // SoLoader for native lib loading
+    implementation("com.facebook.soloader:soloader:0.11.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

@@ -16,6 +16,13 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // Flutter module release repository
+        maven {
+            url = uri("${rootProject.projectDir}/flutter_module/build/host/outputs/repo")
+        }
+        maven {
+            url = uri("https://storage.googleapis.com/download.flutter.io")
+        }
     }
 }
 

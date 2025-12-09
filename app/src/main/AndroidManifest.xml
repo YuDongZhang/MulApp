@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".MulApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -18,9 +21,25 @@
             android:theme="@style/Theme.MulApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        
+        <!-- Flutter 界面 Activity -->
+        <activity
+            android:name=".FlutterScreenActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MulApp"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        
+        <!-- React Native 界面 Activity -->
+        <activity
+            android:name=".RNMainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MulApp">
         </activity>
     </application>
 
