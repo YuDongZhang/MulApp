@@ -28,8 +28,7 @@ dependencyResolutionManagement {
 
 // ✅ ✅ ✅ 关键：React Native 官方 Android 本地 Maven 仓库
         maven {
-            url = uri(
-                "${rootProject.projectDir} /../node_modules/react-native/android")
+            url = uri("$rootDir/node_modules/react-native/android")
         }
 
         // ✅ Hermes 官方仓库（防止 hermes so 丢失）
