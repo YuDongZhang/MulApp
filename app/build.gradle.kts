@@ -23,12 +23,12 @@ android {
     buildTypes {
         getByName("debug") {
             // 调试构建类型
-            buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "false")
+            buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "true")
         }
         create("profile") {
             // 添加 profile 构建类型，用于 Flutter 性能分析
             initWith(getByName("debug"))
-            buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "false")
+            buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "true")
         }
         getByName("release") {
             isMinifyEnabled = false
@@ -36,7 +36,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "false")
+            buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "true")
         }
     }
     compileOptions {

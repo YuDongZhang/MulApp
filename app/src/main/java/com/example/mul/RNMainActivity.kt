@@ -1,28 +1,19 @@
 package com.example.mul
 
-import android.content.Intent
-import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.ComponentActivity
 import com.facebook.react.ReactActivity
-import com.facebook.react.ReactPackage
+import com.facebook.react.ReactActivityDelegate
+import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
+import com.facebook.react.defaults.DefaultReactActivityDelegate
 
 /**
  * React Native 启动 Activity
- * 由于 RN 0.82 使用 New Architecture，brownfield 集成需要完整的原生库构建
- * 这里采用启动独立 RN 应用的方式
+ * 使用 DefaultReactActivityDelegate 以兼容 RN 0.82+ New Architecture
  */
 class RNMainActivity : ReactActivity() {
-    override fun getMainComponentName(): String? {
-        return "MulApp"
-    }
 
-    fun getUseDeveloperSupport(): Boolean {
-        TODO("Not yet implemented")
-    }
+    override fun getMainComponentName(): String = "MulApp"
 
-    fun getPackages(): List<ReactPackage?>? {
-        TODO("Not yet implemented")
-    }
-
+    override fun createReactActivityDelegate(): ReactActivityDelegate =
+        DefaultReactActivityDelegate(this, mainComponentName!!, fabricEnabled)
 }
+

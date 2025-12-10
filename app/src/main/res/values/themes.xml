@@ -2,4 +2,9 @@
 <resources>
 
     <style name="Theme.MulApp" parent="android:Theme.Material.Light.NoActionBar" />
+    
+    <!-- React Native 需要 AppCompat 主题 -->
+    <style name="Theme.MulApp.ReactNative" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
 </resources>
