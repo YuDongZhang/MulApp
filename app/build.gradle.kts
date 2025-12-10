@@ -23,12 +23,12 @@ android {
     buildTypes {
         getByName("debug") {
             // 调试构建类型
-            buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "true")
+            buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "false")
         }
         create("profile") {
             // 添加 profile 构建类型，用于 Flutter 性能分析
             initWith(getByName("debug"))
-            buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "true")
+            buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "false")
         }
         getByName("release") {
             isMinifyEnabled = false
@@ -36,7 +36,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "true")
+            buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "false")
         }
     }
     compileOptions {
@@ -58,10 +58,10 @@ dependencies {
     "profileImplementation"("com.example.flutter_module:flutter_profile:1.0")
     releaseImplementation("com.example.flutter_module:flutter_release:1.0")
 
-    // React Native dependencies
-    implementation("com.facebook.react:react-android:0.82.1")
-    implementation("com.facebook.react:hermes-android:0.82.1")
-    implementation("com.facebook.soloader:soloader:0.11.4")
+    // React Native 0.75.4 dependencies
+    implementation("com.facebook.react:react-android:0.75.4")
+    implementation("com.facebook.react:hermes-android:0.75.4")
+    implementation("com.facebook.soloader:soloader:0.11.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

@@ -1,19 +1,14 @@
 package com.example.mul
 
 import com.facebook.react.ReactActivity
-import com.facebook.react.ReactActivityDelegate
-import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
-import com.facebook.react.defaults.DefaultReactActivityDelegate
 
 /**
  * React Native 启动 Activity
- * 使用 DefaultReactActivityDelegate 以兼容 RN 0.82+ New Architecture
+ * 使用 RN 0.75 旧架构
  */
 class RNMainActivity : ReactActivity() {
 
     override fun getMainComponentName(): String = "MulApp"
-
-    override fun createReactActivityDelegate(): ReactActivityDelegate =
-        DefaultReactActivityDelegate(this, mainComponentName!!, fabricEnabled)
 }
+
 

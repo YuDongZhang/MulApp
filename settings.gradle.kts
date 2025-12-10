@@ -1,5 +1,4 @@
 pluginManagement {
-
     repositories {
         google {
             content {
@@ -12,6 +11,7 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
     repositories {
@@ -25,21 +25,25 @@ dependencyResolutionManagement {
             url = uri("https://storage.googleapis.com/download.flutter.io")
         }
 
-
-// ✅ ✅ ✅ 关键：React Native 官方 Android 本地 Maven 仓库
+        // React Native 本地 Maven 仓库
         maven {
             url = uri("$rootDir/node_modules/react-native/android")
         }
 
-        // ✅ Hermes 官方仓库（防止 hermes so 丢失）
+        // Hermes 引擎仓库
         maven {
-            url = uri(
-                "https://repo.maven.apache.org/maven2"
-            )
+            url = uri("https://repo.maven.apache.org/maven2")
+        }
+        
+        // JSC (JavaScript Core) 仓库
+        maven {
+            url = uri("$rootDir/node_modules/jsc-android/dist")
         }
     }
 }
 
 rootProject.name = "MulApp"
 include(":app")
+
+
 
