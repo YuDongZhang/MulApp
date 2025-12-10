@@ -1,26 +1,15 @@
-import React from 'react';
-import {AppRegistry, StyleSheet, Text, View} from 'react-native';
+/**
+ * index.js - React Native 应用入口文件
+ * 
+ * 这是 React Native 应用的入口点。
+ * AppRegistry.registerComponent 将 JS 组件注册为根组件。
+ * 'MulApp' 必须与 Android 端 getMainComponentName() 返回的值一致。
+ */
 
-const HelloWorld = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.hello}>Hello, World</Text>
-    </View>
-  );
-};
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  hello: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-});
+import { AppRegistry } from 'react-native';
+import App from './src/App';
 
-AppRegistry.registerComponent(
-  'MulApp',
-  () => HelloWorld,
-);
+// 注册根组件
+// 第一个参数是组件名称，必须与 Android/iOS 原生代码中的名称一致
+// 第二个参数是返回根组件的函数
+AppRegistry.registerComponent('MulApp', () => App);
