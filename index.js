@@ -8,8 +8,12 @@
 
 import { AppRegistry } from 'react-native';
 import App from './src/App';
+import HybridRNComponent from './src/HybridRNComponent';
 
 // 注册根组件
 // 第一个参数是组件名称，必须与 Android/iOS 原生代码中的名称一致
 // 第二个参数是返回根组件的函数
 AppRegistry.registerComponent('MulApp', () => App);
+
+// 注册混合界面使用的 RN 组件
+AppRegistry.registerComponent('HybridRNComponent', () => HybridRNComponent);

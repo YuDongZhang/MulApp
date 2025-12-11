@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
     val context = LocalContext.current
-    val items = listOf("原型", "compose", "flutter", "RN")
+    val items = listOf("原型", "compose", "flutter", "RN", "混合界面")
     
     LazyColumn(modifier = modifier.fillMaxSize()) {
         items(items) {
@@ -55,6 +55,10 @@ fun MainScreen(modifier: Modifier = Modifier) {
                             "RN" -> {
                                 // 跳转到 React Native 界面
                                 context.startActivity(Intent(context, RNMainActivity::class.java))
+                            }
+                            "混合界面" -> {
+                                // 跳转到混合界面（原生+Flutter+RN）
+                                context.startActivity(Intent(context, HybridScreenActivity::class.java))
                             }
                             else -> {
                                 // 原型和 compose 不做任何操作

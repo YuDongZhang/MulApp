@@ -40,6 +40,14 @@
             android:exported="false"
             android:theme="@style/Theme.MulApp.ReactNative"/>
         
+        <!-- 混合界面 Activity (原生+Flutter+RN) -->
+        <activity android:name=".HybridScreenActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MulApp.ReactNative"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize"/>
+        
 
     </application>
 
